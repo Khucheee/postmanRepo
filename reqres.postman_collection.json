@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "be446b71-51df-45e4-bcb2-615b9a31ebf5",
+		"name": "reqres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23039827"
+	},
+	"item": [
+		{
+			"name": "https://reqres.in/api/users/3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{test_url}}/api/users/",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Javascript forEach",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"let array = response.data;\r",
+							"for (var i = 0; i<array.length;i++){\r",
+							"    if(array[i].first_name===\"Janet\"){\r",
+							"        console.log(\"Внатуре есть такое имя шок контент\")\r",
+							"    }\r",
+							"}\r",
+							"array.forEach((emp) => {\r",
+							"\r",
+							"    if (emp.first_name === \"Janet\"){\r",
+							"        console.log(\"YOOOOOOOOO IT IS STILL WORKS EVEN IN foreach loop\")\r",
+							"    }}\r",
+							")\r",
+							"array.find((emp) => {\r",
+							"    if (emp.first_name === \"Janet\"){\r",
+							"        console.log(\"YOOOOOOOOO IT IS STILL WORKS EVEN IN foreach loop\");\r",
+							"    };\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{test_url}}/api/users/",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JavaScript functions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"let addition = (a,b) => a+b;\r",
+							"\r",
+							"function addition2 (a,b){\r",
+							"    sum = a+b;\r",
+							"    return sum;\r",
+							"}\r",
+							"var x = addition(7,8);\r",
+							"console.log(x,addition2(3,4))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/3",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Javascript callback functions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"let multiply = (a,b) =>console.log( a*b);\r",
+							"let add = (a,b) => console.log(a+b);\r",
+							"\r",
+							"function test(testname, callback,a,b){\r",
+							"console.log(testname);\r",
+							"callback(a,b)\r",
+							"}\r",
+							"\r",
+							"test(\"Yooooo\",multiply,5,6);\r",
+							"test(\"This is absolute YOOOOOOOO\",add,33,44);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/3",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Javascript objects",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let studentName = \"John\"\r",
+							"let age = 16;\r",
+							"let year = 8;\r",
+							"\r",
+							"const student = {\r",
+							"    studentName: 'John',\r",
+							"    age:16,\r",
+							"    year:10,\r",
+							"    welcome: function(){\r",
+							"        console.log(\"YOOOOOO METHODS HERE\")\r",
+							"    }\r",
+							"};\r",
+							"console.log(student.studentName)\r",
+							"console.log(student[\"age\"])\r",
+							"student.welcome()\r",
+							"\r",
+							"let u = JSON.stringify(student)\r",
+							"console.log(u)\r",
+							"\r",
+							"let o = JSON.parse(u);\r",
+							"console.log(o);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/3",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_url}}/api/users",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Great\",\r\n    \"job\": \"Tester\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_url}}/api/users/3",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/3",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Greatest\",\r\n}"
+				},
+				"url": {
+					"raw": "{{test_url}}/api/users/3",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{test_url}}/api/users/3",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
