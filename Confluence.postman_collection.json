@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "99f7b197-9121-4bde-84b2-4d59c2103cef",
+		"name": "Confluence",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23039827"
+	},
+	"item": [
+		{
+			"name": "Get spaces",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json()\r",
+							"\r",
+							"let confKey = response.results[1].key\r",
+							"\r",
+							"pm.collectionVariables.set(\"confKey\",confKey)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{confluenceToken}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "alfred777@list.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://khuchashev.atlassian.net//wiki/api/v2/spaces",
+					"protocol": "https",
+					"host": [
+						"khuchashev",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"",
+						"wiki",
+						"api",
+						"v2",
+						"spaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get pages",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{confluenceToken}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "alfred777@list.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://khuchashev.atlassian.net//wiki/api/v2/pages",
+					"protocol": "https",
+					"host": [
+						"khuchashev",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"",
+						"wiki",
+						"api",
+						"v2",
+						"pages"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "confluenceToken",
+			"value": "ATATT3xFfGF0ZTARenLloo4wlaYtCBqVMvCnit7He4vmD59TFHoKCy-vf-kXydI0Qy-Tb2hDm7VqG2KhbJR_fL36Uzt18IE-nVTYk9o7HsZq16GHrMQZUbyhR0wSlxU9D902s0d1a7YDqUb0sOcR6osgNPFChfo7LoIrDXvo55C5Qzk9iU1mSFo=FE08B1E7"
+		},
+		{
+			"key": "confKey",
+			"value": ""
+		}
+	]
+}
